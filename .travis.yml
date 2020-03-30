@@ -1,0 +1,20 @@
+language: ruby
+
+cache: bundler 
+
+before_install: 
+  - gem update bundler
+  - chmod +x ./script/cibuild
+install:
+  - bundle install
+
+script: ./script/cibuild
+
+branches:
+  only:
+  - build
+
+sudo: false
+
+notifications:
+  email: false
