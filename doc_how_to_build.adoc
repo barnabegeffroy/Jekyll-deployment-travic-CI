@@ -118,7 +118,7 @@ Note that there is a small modification compared to the tutorial :
 This allows to correctly execute the `cibuild` (called `Setup` in the tutorial but renamed and placed in a `script` directory for a Jekyll convention).
 
 .Content `cibuild` configuration file
-[source,yaml]
+[source,cibuild]
 ----
 set -e
 DEPLOY_REPO="https://${MY_WEBSITE}@github.com/username/repo_name.git"
