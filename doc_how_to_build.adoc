@@ -35,6 +35,8 @@ plugins:
 ----
 
 * `Gemfile`:
+If you are not comfortable with it, I advise you to read Jekyll's https://jekyllrb.com/docs/step-by-step/10-deployment/[doc] about it.
+
 You have to remove (or comment) the `gem "jekyll" line, "~> 4.0.0"` and add `gem "github-pages", group: :jekyll_plugins`. Then put all the plugins as in the example below: 
 
 .Sample `Gemfile` configuration file
@@ -65,6 +67,8 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 ----
 
+This Gemfile is inspired by the one generated automatically when creating a Jekyll project (with the command `bundle exec jekyll new .`)
+Look what he looks like https://github.com/barnabegeffroy/vegan_or_not/blob/build/Original_Gemfile[here] to understand the other lines.
 
 Once this is done, do :
 
