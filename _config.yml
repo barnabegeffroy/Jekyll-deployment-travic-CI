@@ -70,12 +70,6 @@ sass:
   sass_dir:         _sass
   style:            compressed
 
-# Gems
-#gems:
-#  - jekyll-mentions
-#  - jekyll-sitemap
-#  - jekyll-feed
-#  - jekyll-gist
 
 paginate: 6
 paginate_path: "/videos/page:num/"
