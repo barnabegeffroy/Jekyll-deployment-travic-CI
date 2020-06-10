@@ -2,6 +2,7 @@
   <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Theme Home</a></li>
   <li class="{% if page.url contains '/videos/' %} active {% endif %}"><a href="{{ "/videos/" | absolute_url }}">Vidéos</a></li>
   <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/about/" | absolute_url }}">About</a></li>
+  <li class="{% if page.url contains '/form/' %} active {% endif %}"><a href="{{ "/form/" | absolute_url }}">Questionnaire</a></li>
 </ul>
 
 <ul class="icons">
