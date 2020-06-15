@@ -1,0 +1,154 @@
+---
+layout: page
+title: 3rd form
+sitemap:
+priority: 0.7
+lastmod: 2017-11-02
+changefreq: weekly
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        #global {
+            width: 600px;
+            border: solid white 1px;
+        }
+
+        #cadre1 {
+            height: 500px;
+            width: 200px;
+            float: left;
+            border: solid white 1px;
+        }
+
+        #cadre2 {
+            height: 500px;
+            width: 200px;
+            margin-left: 150px;
+            border: solid white 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Le menu de la cantine</h1>
+
+    <div>
+        <p>Nombre de jours où des plats végans et des plats carnés sont proposés : <span id="bothValue"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <p>Nombre de jours où seul des plats végans sont proposés : <span id="vegValue"></span></p>
+        <input type="range" min="0" max="5" step="1" value="0" id="veg" class="slider">
+        <p>Nombre de jours où seul des plats carnés sont proposés : <span id="carneValue"></span></p>
+        <input type="range" min="0" max="5" step="1" value="0" id="carne" class="slider">
+    </div>
+    <p></p>
+
+
+    <div>
+        <p><span id="vegDays"></span> jours </p>
+            <img src="" alt="" id="imageV1" height="5%" width="5%" />
+            <img src="" alt="" id="imageV2" height="5%" width="5%" />
+            <img src="" alt="" id="imageV3" height="5%" width="5%" />
+            <img src="" alt="" id="imageV4" height="5%" width="5%" />
+            <img src="" alt="" id="imageV5" height="5%" width="5%" />
+
+        <p><span id="carneDays"></span> jours </p>
+            <img src="" alt="" id="imageC1" height="5%" width="5%" />
+            <img src="" alt="" id="imageC2" height="5%" width="5%" />
+            <img src="" alt="" id="imageC3" height="5%" width="5%" />
+            <img src="" alt="" id="imageC4" height="5%" width="5%" />
+            <img src="" alt="" id="imageC5" height="5%" width="5%" />
+
+        <p><span id="bothDays"></span> jours </p>
+            <img src="{{ "/images/rot.png" | absolute_url }}" alt="" id="imageB1" height="10%" width="5%" />
+            <img src="{{ "/images/rot.png" | absolute_url }}" alt="" id="imageB2" height="10%" width="5%" />
+            <img src="{{ "/images/rot.png" | absolute_url }}" alt="" id="imageB3" height="10%" width="5%" />
+            <img src="{{ "/images/rot.png" | absolute_url }}" alt="" id="imageB4" height="10%" width="5%" />
+            <img src="{{ "/images/rot.png" | absolute_url }}" alt="" id="imageB5" height="10%" width="5%" />
+    </div>
+
+    <script>
+        function updateImage() {
+            var vegValue = veg.value;
+            var carneValue = carne.value;
+            sum = parseInt(vegValue) + parseInt(carneValue);
+            var imagesV = ['imageV1', 'imageV2', 'imageV3', 'imageV4', 'imageV5'];
+            var imagesC = ['imageC1', 'imageC2', 'imageC3', 'imageC4', 'imageC5'];
+            var imagesB = ['imageB1', 'imageB2', 'imageB3', 'imageB4', 'imageB5'];
+            for (var i = 0, l = max; i < l; i++) {
+                if (i < vegValue) {
+                    document.getElementById(imagesV[i]).src = "{{ "/images/veg.jpg" | absolute_url }}";
+                } else {
+                    document.getElementById(imagesV[i]).src = "";
+                }
+                if (i < carneValue) {
+                    document.getElementById(imagesC[i]).src = "{{ "/images/carne.jpg" | absolute_url }}";
+                } else {
+                    document.getElementById(imagesC[i]).src = "";
+                }
+                if (i < max - sum) {
+                    document.getElementById(imagesB[i]).src = "{{ "/images/rot.png" | absolute_url }}";
+                } else {
+                    document.getElementById(imagesB[i]).src = "";
+                }
+
+                }
+            }
+        
+    </script>
+    <script src="{{ "/assets/js/sliders.js" | absolute_url }}"></script>
+    <p></p>
+    <div id="cid_2" class="form-input-wide">
+        <div style="margin-left:156px" data-align="auto">
+            <button id="input_2" type="submit" data-component="button" data-content="">
+                Soumission
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
