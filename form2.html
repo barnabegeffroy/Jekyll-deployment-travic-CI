@@ -97,6 +97,29 @@ sitemap:
         <img src="{{ "/images/images.png" | absolute_url }}" alt="" id="image3" height="10%" width="20%"/>
     </div>
     
+    <script>
+        var vegOutput = document.getElementById("vegDays");
+            vegOutput.innerHTML = veg.value;
+
+            var carneOutput = document.getElementById("carneDays");
+            carneOutput.innerHTML = carne.value;
+
+            var bothOutput = document.getElementById("bothDays");
+            sum = parseInt(veg.value) + parseInt(carne.value);
+            bothOutput.innerHTML = 5 - sum;
+        function updateImage() {
+            var vegOutput = document.getElementById("vegDays");
+            vegOutput.innerHTML = veg.value;
+
+            var carneOutput = document.getElementById("carneDays");
+            carneOutput.innerHTML = carne.value;
+
+            var bothOutput = document.getElementById("bothDays");
+            sum = parseInt(veg.value) + parseInt(carne.value);
+            bothOutput.innerHTML = 5 -sum;
+            }
+
+    </script>
     <script src="{{ "/assets/js/sliders.js" | absolute_url }}"></script>
 <p></p>
     <div id="cid_2" class="form-input-wide">
