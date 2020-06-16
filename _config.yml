@@ -1,22 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+iconURL: assets/default-icon.png
+theme: jekyll-theme-leaf
+
+# for a clean URL
+permalink: :slug
+
+### comments & analytics
+hyvor_talk_website_id: 14
+google_analytics: UA-NNNNNNNN-N
 
 # Site
 title:              Vegan or not Vegan
@@ -41,51 +31,19 @@ location:           Paris, France
 phone:              xxxxxxxxxxx
 email:              barnabe.geffroy@psl.eu # change this to your email to receive free emails for your contact submissions via Slapform.com
 
-# Other
-background_image:   /vegan_or_not/images/bg.jpg
-# Tip: The color palette and other styles can be configured in /_sass/lib/_vars.scss
-slapform_thankyou_page: /thank-you
-
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    permalink: "/videos/:title/"
-    layout: post
-    author:
-
-# Jekyll
-permalink:          /videos/:title/
-markdown:           kramdown
-highlighter:        rouge
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
 
 
-paginate: 6
-paginate_path: "/videos/page:num/"
+
 
 jekyll-mentions:
     base_url: https://github.com
 
 
 # Build settings
-theme: minima
+theme: jekyll-theme-leaf
 plugins:
   - jekyll-feed
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-mentions
-  - jekyll-gist
+  - jekyll-seo-tag
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile, old]

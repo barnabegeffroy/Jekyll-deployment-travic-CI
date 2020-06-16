@@ -1,74 +1,139 @@
-# Massively
-> This is Massively, a text-heavy, article-oriented design built around a huge background
-image.
+# jekyll-theme-leaf
 
-See a preview of the Massively Jekyll Theme here: [https://iwiedenm.github.io/jekyll-theme-massively/](https://iwiedenm.github.io/jekyll-theme-massively/). <br>
-Massively was originally designed by HTML5UP and Jekyll was integrated by [JekyllUp: Jekyll Themes](https://jekyllup.com)
+👇👇
 
-## How to Use This Theme
-Jekyll consumes themes in two flavors; gem-based or spread across multiple folders
-in the site source. This port is of the second type. Concretely, it means that you
-can simply grab the [zip][zip] or clone this repository, run `bundle install`
-in the new directory and finally `bundle exec jekyll serve`.
-You can now access your brand-new Jekyll site on [http://127.0.0.1:4000/][local].
-Enjoy!
+[Preview Theme](https://supunkavinda.github.io/jekyll-theme-leaf/) 
 
-If you're completely new to Jekyll, check out it's [documentation][jekyll] first.
-It's not too hard, we promise!
+Jekyll Theme Leaf is a very simple yet beautiful theme created by [Supun Kavinda](https://twitter.com/_SupunKavinda). It is designed for those who love dark sites.
 
-[zip]: https://github.com/iwiedenm/jekyll-theme-massively-src/archive/master.zip
-[local]: http://127.0.0.1:4000/
-[jekyll]: https://jekyllrb.com/
+![Screenshot](https://i.imgur.com/fBiCIuL.png)
 
-## Features
+## Installation
 
-### Slapform.com Integration
-[Slapform](https://slapform.com) is supported out of the box! Just add your email to ```_config.yml``` and test the form.
-Every time one of your visitors submits the form, you'll get an email straight to your inbox containing the submission so you can get back to them right away. Slapform is very extendable, including AJAX submissions, webhooks, and more.
+Add this line to your Jekyll site's `Gemfile`:
 
-### Auto-Generating Sitemap
-The sitemap is auto generated! Just simply change the sitemap variable in front matter of each page. It looks like so...
-```
-sitemap:
-  priority: 0.7
-  lastmod: 2017-11-02
-  changefreq: weekly
+```ruby
+gem "jekyll-theme-leaf"
 ```
 
-## Credits
-### Original README from HTML5 UP
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-theme-leaf
 ```
-Massively by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
+And then execute:
 
-This is Massively, a text-heavy, article-oriented design built around a huge background
-image (with a new parallax implementation I'm testing) and scroll effects (powered by
-Scrollex). A *slight* departure from all the one-pagers I've been doing lately, but one
-that fulfills a few user requests and makes use of some new techniques I've been wanting
-to try out. Enjoy it :)
+    $ bundle
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Or install it yourself as:
 
-(* = not included)
+    $ gem install jekyll-theme-leaf
 
-AJ
-aj@lkn.io | @ajlkn
+## Usage
 
+### Layouts
 
-Credits:
+Refers to files within the `_layouts` directory, that define the markup for your theme.
 
-	Demo Images:
-		Unsplash (unsplash.com)
+* `default.html` - The base markup of all other layouts.
+* `home.html` - Home or index page layout.
+* `page.html` - Page layout (These are not listed as posts).
+* `posts.html` - Posts layout. These are listed in the home directory.
 
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
+### Includes
 
-	Other:
-		jQuery (jquery.com)
-		Misc. Sass functions (@HugoGiraudel)
-		Skel (skel.io)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
+These are the files within the `_includes` directory.
+
+* `footer.html` - Markup for the footer. It's a minimal footer with the site title and twitter and github links.
+* `google-analytics.html` - Contains the [Google Analytics](https://analytics.google.com/analytics/web/) code.
+* `head.html` - Contains the HTML code for the `<head>`.
+* `header.html` - The header/top navigation bar of the site.
+* `hyvor-talk-comments.html` - [Hyvor Talk](https://talk.hyvor.com) installation code with a customized color palette.
+
+### Sass
+
+* `leaf.scss` - The main SCSS file. Contains several variables and mixins.
+* `_base.scss` - Primary styles
+* `_highlight-dark.scss` - Code highlighting
+* `_layout.scss` - Layout SCSS files
+    * `_layout_header.scss` - Styles of the header (`_includes/header.html`)
+    * `_layout_home.scss` - Styles of the home (`_layouts/home.html`)
+    * `_layout-post.scss` - Styles of the post and page layouts (`_layouts/posts.html`, `_layouts/page.html`)
+
+### Assets
+
+* `assets/css/style.css` - Imports `_sass/leaf.scss`.
+* `assets/default-icon.png` - The leaf icon.
+
+### Plugins
+
+Leaf Jekyll theme uses two plugins by default.
+
+* `jekyll-seo-tag` - For better SEO
+* `jekyll-feed` - For RSS feed
+
+## Configuration
+
+Here's the basic `_config.yml` file of this plugin.
+
+```yaml
+title: Leaf Blog
+iconURL: assets/default-icon.png
+theme: jekyll-theme-leaf
+
+permalink: :slug
+
+social:
+  twitter: YOUR_TWITTER
+  github: YOUR_GITHUB
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+
+### comments & analytics
+hyvor_talk_website_id: YOUR_WEBSITE_ID
+google_analytics: UA-NNNNNNNN-N
 ```
+
+### Adding Comments
+
+The Leaf Jekyll theme uses [Hyvor Talk](https://talk.hyvor.com) comments. The colors are customized based for the theme therefore you don't need to customize colors in the console.
+
+* First, [login to the Hyvor Talk console](https://talk.hyvor.com/console)
+* Register your website
+* Get your website ID from the **General** section of the console.
+* Then, replace `YOUR_WEBSITE_ID` in the above code in `_config.yml` with your code.
+
+Ex: 
+
+```yaml
+hyvor_talk_website_id: 14
+```
+
+### Adding Google Analytics
+
+* Sign up to [Google Analytics](https://analytics.google.com)
+* Add your website and get the tracking ID.
+* Replace `UA-NNNNNNNN-N` with your tracking ID.
+
+Google Analytics will only appear in production.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/SupunKavinda/jekyll-theme-leaf. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `leaf.gemspec` accordingly.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
