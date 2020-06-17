@@ -106,25 +106,24 @@
             background: #4CAF50;
             cursor: pointer;
         }
+        * {
+  box-sizing: border-box;
+}
 
-        #global {
-            width: 600px;
-            border: solid white 1px;
-        }
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
 
-        #cadre1 {
-            height: 500px;
-            width: 200px;
-            float: left;
-            border: solid white 1px;
-        }
-
-        #cadre2 {
-            height: 500px;
-            width: 200px;
-            margin-left: 150px;
-            border: solid white 1px;
-        }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
     </style>
 </head>
 
@@ -132,40 +131,36 @@
 
     <h1>Le menu de la cantine</h1>
 
-    <div>
-        <p>Nombre de jours où des plats végans et des plats carnés sont proposés : <span id="bothValue"></span></p>
-    </div>
-    <div class="slidecontainer">
-        <p>Nombre de jours où seul des plats végans sont proposés : <span id="vegValue"></span></p>
-        <input type="range" min="0" max="5" step="1" value="0" id="veg" class="slider">
-        <p>Nombre de jours où seul des plats carnés sont proposés : <span id="carneValue"></span></p>
-        <input type="range" min="0" max="5" step="1" value="0" id="carne" class="slider">
-    </div>
-    <p></p>
+    <div class="row">
+        <div class="column">
+              <p>Nombre de jours où seul des plats végans sont proposés : <span id="vegValue"></span></p>
+              <input type="range" min="0" max="5" step="1" value="0" id="veg" class="slider">
+              <p>Nombre de jours où seul des plats carnés sont proposés : <span id="carneValue"></span></p>
+              <input type="range" min="0" max="5" step="1" value="0" id="carne" class="slider">
+        </div>
+        <div class="column">
+              <p>Végé</p>
+                  <img src="" alt="" id="imageV1" height="5%" width="5%" />
+                  <img src="" alt="" id="imageV2" height="5%" width="5%" />
+                  <img src="" alt="" id="imageV3" height="5%" width="5%" />
+                  <img src="" alt="" id="imageV4" height="5%" width="5%" />
+                  <img src="" alt="" id="imageV5" height="5%" width="5%" />
+      <p>Carné</p>
+                  <img src="" alt="" id="imageC1" height="5%" width="5%" />
+                  <img src="" alt="" id="imageC2" height="5%" width="5%" />
+                  <img src="" alt="" id="imageC3" height="5%" width="5%" />
+                  <img src="" alt="" id="imageC4" height="5%" width="5%" />
+                  <img src="" alt="" id="imageC5" height="5%" width="5%" />
+      
+      <p>Végé & carné</p>
+                  <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB1" height="10%" width="5%" />
+                  <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB2" height="10%" width="5%" />
+                  <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB3" height="10%" width="5%" />
+                  <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB4" height="10%" width="5%" />
+                  <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB5" height="10%" width="5%" />
 
-
-    <div>
-        <h3>Les menus</h3>
-        <h5>Végé</h5>
-            <img src="" alt="" id="imageV1" height="5%" width="5%" />
-            <img src="" alt="" id="imageV2" height="5%" width="5%" />
-            <img src="" alt="" id="imageV3" height="5%" width="5%" />
-            <img src="" alt="" id="imageV4" height="5%" width="5%" />
-            <img src="" alt="" id="imageV5" height="5%" width="5%" />
-<h5>Carné</h5>
-            <img src="" alt="" id="imageC1" height="5%" width="5%" />
-            <img src="" alt="" id="imageC2" height="5%" width="5%" />
-            <img src="" alt="" id="imageC3" height="5%" width="5%" />
-            <img src="" alt="" id="imageC4" height="5%" width="5%" />
-            <img src="" alt="" id="imageC5" height="5%" width="5%" />
-
-<h5>Végé & carné</h5>
-            <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB1" height="10%" width="5%" />
-            <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB2" height="10%" width="5%" />
-            <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB3" height="10%" width="5%" />
-            <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB4" height="10%" width="5%" />
-            <img src="https://barnabegeffroy.github.io/vegan_or_not/images/rot.png" alt="" id="imageB5" height="10%" width="5%" />
-    </div>
+        </div>
+      </div>
 
     <script>
         function updateImage() {

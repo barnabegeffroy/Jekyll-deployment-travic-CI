@@ -9,8 +9,6 @@ carneOutput.innerHTML = carne.value;
 
 var images = ['image1', 'image2', 'image3', 'image4', 'image5'];
 var max = 5;
-var bothOutput = document.getElementById("bothValue");
-bothOutput.innerHTML = max - parseInt(veg.value) - parseInt(carne.value);
 veg.oninput = function () {
     sum = parseInt(this.value) + parseInt(carne.value);
     if (sum > max) {
@@ -18,7 +16,6 @@ veg.oninput = function () {
     }
     vegOutput.innerHTML = this.value;
     carneOutput.innerHTML = carne.value;
-    bothOutput.innerHTML = max - parseInt(veg.value) - parseInt(carne.value);
     updateImage();
 }
 carne.oninput = function () {
@@ -28,7 +25,6 @@ carne.oninput = function () {
     }
     vegOutput.innerHTML = veg.value;
     carneOutput.innerHTML = this.value;
-    bothOutput.innerHTML = max - parseInt(veg.value) - parseInt(carne.value);
     updateImage();
 }
 
